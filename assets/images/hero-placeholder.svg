@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#fff7e8"/><stop offset=".55" stop-color="#f8dba2"/><stop offset="1" stop-color="#b51e18"/></linearGradient></defs>
+<rect width="1000" height="700" fill="url(#g)"/><circle cx="730" cy="300" r="190" fill="#fff4d2" opacity=".8"/><circle cx="730" cy="300" r="120" fill="#d9a13a" opacity=".28"/>
+<path d="M705 180l25-55 25 55-25 90zM600 240l-55-25 55-25 80 25zM860 240l55-25-55-25-80 25z" fill="#a51614" opacity=".9"/>
+<text x="500" y="555" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#8f1714">माताराणी</text>
+<text x="500" y="610" text-anchor="middle" font-family="Arial" font-size="22" fill="#6e4430">डमी फोटो — नंतर actual photo बदला</text></svg>
