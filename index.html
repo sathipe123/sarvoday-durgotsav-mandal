@@ -13,6 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/spacing-fix.css">
 
   <head>
 
@@ -124,7 +125,7 @@
 
             <div class="hero-image-glow"></div>
 
-            <img src="assets/images/hero-matarani.jpg" alt="लखमापूरची माताराणी">
+            <img src="assets/images/newdevi.png" alt="लखमापूरची माताराणी">
 
             <div class="hero-image-overlay"></div>
 
@@ -409,105 +410,245 @@
 
     </section>
 
+
+    <!-- =========================================
+     GALLERY
+========================================= -->
+
     <section class="section lower" id="gallery">
+
       <div class="container">
+
+        <!-- Gallery Header -->
         <div class="section-head">
+
           <div>
             <div class="section-label">GALLERY PREVIEW</div>
             <h2>क्षणचित्रे, भक्तीची...</h2>
           </div>
-          <a class="text-btn" href="#gallery">संपूर्ण गॅलरी →</a>
-        </div>
-        <div class="sdm-gallery">
 
-          <div class="gallery-item gallery-large">
+          <button class="text-btn gallery-view-all" type="button" onclick="showAllGallery()">
+            संपूर्ण गॅलरी →
+          </button>
+
+        </div>
+
+
+        <!-- =========================================
+         GALLERY GRID
+    ========================================== -->
+
+        <div class="sdm-gallery" id="sdmGallery">
+
+
+          <!-- Image 01 -->
+
+          <div class="gallery-item gallery-large gallery-preview-item">
+
             <img src="assets/images/gallery/IMG_20241014_160720.jpg" alt="सर्वोदय दुर्गोत्सव मंडळ - माताराणी विसर्जन"
               onclick="openGallery(this)">
+
             <div class="gallery-overlay">
               <span>विसर्जन सोहळा</span>
               <b>↗</b>
             </div>
+
           </div>
 
-          <div class="gallery-item">
+
+          <!-- Image 02 -->
+
+          <div class="gallery-item gallery-preview-item">
+
             <img src="assets/images/gallery/IMG_20241014_160702.jpg" alt="मंडळाचा विसर्जन सोहळा"
               onclick="openGallery(this)">
+
             <div class="gallery-overlay">
               <span>मंडळाची आठवण</span>
               <b>↗</b>
             </div>
+
           </div>
 
-          <div class="gallery-item">
+
+          <!-- Image 03 -->
+
+          <div class="gallery-item gallery-preview-item">
+
             <img src="assets/images/gallery/IMG_20241014_160256.jpg" alt="माताराणी आणि भक्तगण"
               onclick="openGallery(this)">
+
             <div class="gallery-overlay">
               <span>माताराणीचे दर्शन</span>
               <b>↗</b>
             </div>
+
           </div>
 
-          <div class="gallery-item gallery-tall">
+
+          <!-- Image 04 -->
+
+          <div class="gallery-item gallery-tall gallery-preview-item">
+
             <img src="assets/images/gallery/IMG-20251006-WA0012.jpg" alt="मंडळाचा उत्सव" onclick="openGallery(this)">
+
             <div class="gallery-overlay">
               <span>उत्सवाचे क्षण</span>
               <b>↗</b>
             </div>
+
           </div>
 
-          <div class="gallery-item">
+
+          <!-- Image 05 -->
+
+          <div class="gallery-item gallery-preview-item">
+
             <img src="assets/images/gallery/IMG-20251002-WA0099.jpg" alt="सर्वोदय दुर्गोत्सव मंडळ कार्यक्रम"
               onclick="openGallery(this)">
+
             <div class="gallery-overlay">
               <span>भक्तीमय क्षण</span>
               <b>↗</b>
             </div>
+
           </div>
 
-          <div class="gallery-item ">
+
+          <!-- Image 06 -->
+
+          <div class="gallery-item gallery-preview-item">
+
             <img src="assets/images/matarani-real.jpg" alt="माताराणीचे सुंदर दर्शन" onclick="openGallery(this)">
+
             <div class="gallery-overlay">
               <span>माताराणीचे दर्शन</span>
               <b>↗</b>
             </div>
+
           </div>
 
+
+          <!-- =========================================
+           FUTURE IMAGES
+           Add new images here using this structure.
+           They will automatically become hidden on
+           mobile after the first 6 preview images.
+      ========================================== -->
+
+          <!--
+      <div class="gallery-item gallery-extra">
+
+        <img
+          src="assets/images/gallery/new-photo.jpg"
+          alt="नवीन क्षणचित्र"
+          onclick="openGallery(this)">
+
+        <div class="gallery-overlay">
+          <span>नवीन क्षण</span>
+          <b>↗</b>
         </div>
 
-        <!-- Gallery Lightbox -->
-        <div class="gallery-lightbox" id="galleryLightbox" onclick="closeGallery()">
-          <button class="gallery-close" onclick="closeGallery()">×</button>
-          <img id="galleryPreview" src="" alt="Gallery Preview">
-        </div>
       </div>
+      -->
+
+        </div>
+
+
+        <!-- =========================================
+         MOBILE VIEW ALL BUTTON
+    ========================================== -->
+
+        <div class="gallery-mobile-action">
+
+          <button class="gallery-view-more" type="button" onclick="showAllGallery()">
+
+            सर्व क्षणचित्रे
+            <span>→</span>
+
+          </button>
+
+        </div>
+
+
+        <!-- =========================================
+         GALLERY LIGHTBOX
+    ========================================== -->
+
+        <div class="gallery-lightbox" id="galleryLightbox" onclick="closeGallery()">
+
+          <button class="gallery-close" type="button" onclick="closeGallery()" aria-label="Close gallery">
+
+            ×
+
+          </button>
+
+          <img id="galleryPreview" src="" alt="Gallery Preview">
+
+        </div>
+
+      </div>
+
     </section>
+
+
 
     <section class="section events" id="events">
       <div class="container">
+
         <div class="section-head">
           <div>
             <div class="section-label">EVENTS</div>
             <h2>आगामी कार्यक्रम</h2>
           </div>
-          <span class="muted">तारीख आणि माहिती नंतर add करू</span>
+
+          <span class="muted">२०२६</span>
         </div>
+
         <div class="event-grid">
-          <article><span>01</span>
+
+          <!-- Event 01 -->
+          <article>
+            <span>01</span>
+
             <h3>नवरात्रोत्सव</h3>
-            <p>माताराणीच्या नवरात्रोत्सवाची तयारी आणि कार्यक्रम.</p>
+
+            <p>
+              माताराणीच्या नवरात्रोत्सवाचा भक्तिमय उत्सव,
+              विविध धार्मिक व सांस्कृतिक कार्यक्रमांसह.
+            </p>
           </article>
-          <article><span>02</span>
-            <h3>आरती व धार्मिक कार्यक्रम</h3>
-            <p>भक्तिमय आरती आणि धार्मिक उपक्रम.</p>
+
+
+          <!-- Event 02 -->
+          <article>
+            <span>02</span>
+
+            <h3>लकी ड्रॉ</h3>
+
+            <p>
+              विशेष लकी ड्रॉचे आयोजन.
+              सहभागी व्हा आणि आकर्षक बक्षिसे जिंकण्याची संधी मिळवा.
+            </p>
           </article>
-          <article><span>03</span>
-            <h3>सामाजिक उपक्रम</h3>
-            <p>समाजासाठी विविध उपक्रम आणि सेवा.</p>
+
+
+          <!-- Event 03 -->
+          <article>
+            <span>03</span>
+
+            <h3>महा आरती</h3>
+
+            <p>
+              माताराणीच्या चरणी भक्तिभावाने
+              महा आरती व सामूहिक प्रार्थनेचे आयोजन.
+            </p>
           </article>
+
         </div>
+
       </div>
     </section>
-
     <section class="section team" id="team">
 
       <div class="container">
@@ -599,57 +740,7 @@
           </div>
 
 
-          <div class="members-list">
-
-            <div class="member-name">
-              01 <strong>शंकर उरकुंडे</strong>
-            </div>
-
-            <div class="member-name">
-              02 <strong>उत्तम काकडे</strong>
-            </div>
-
-            <div class="member-name">
-              03 <strong>शुभम थिपे</strong>
-            </div>
-
-            <div class="member-name">
-              04 <strong>पुरुषोत्तम काकडे</strong>
-            </div>
-
-            <div class="member-name">
-              05 <strong>सुनील थिपे</strong>
-            </div>
-
-            <div class="member-name">
-              06 <strong>प्रभाकर थिपे</strong>
-            </div>
-
-            <div class="member-name">
-              07 <strong>पुंडलिक जोगी</strong>
-            </div>
-
-            <div class="member-name">
-              08 <strong>भास्कर चौधरी</strong>
-            </div>
-
-            <div class="member-name">
-              09 <strong>सदस्याचे नाव</strong>
-            </div>
-
-            <div class="member-name">
-              10 <strong>सदस्याचे नाव</strong>
-            </div>
-
-            <div class="member-name">
-              11 <strong>सदस्याचे नाव</strong>
-            </div>
-
-            <div class="member-name">
-              12 <strong>सदस्याचे नाव</strong>
-            </div>
-
-          </div>
+          <div class="members-list" id="membersList"></div>
 
         </div>
 
@@ -966,7 +1057,7 @@
           <div class="visitor-content">
             <small>WEBSITE VISITORS</small>
 
-            <strong id="visitorCount"> 0 </strong>
+            <strong id="visitorCount">—</strong>
 
             <span>आपल्या भेटीसाठी धन्यवाद 🙏</span>
           </div>

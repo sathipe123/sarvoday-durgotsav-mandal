@@ -1,29 +1,180 @@
 const menuBtn = document.getElementById('menuBtn'); const nav = document.getElementById('nav');
 menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
 document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+/* =========================================
+   SDM GALLERY
+========================================= */
+
+
+/* =========================================
+   OPEN GALLERY
+========================================= */
+
 function openGallery(image) {
-    const lightbox = document.getElementById("galleryLightbox");
-    const preview = document.getElementById("galleryPreview");
+
+    const lightbox =
+        document.getElementById("galleryLightbox");
+
+    const preview =
+        document.getElementById("galleryPreview");
+
+
+    if (!lightbox || !preview || !image) {
+        return;
+    }
+
 
     preview.src = image.src;
+
+    preview.alt =
+        image.alt || "Gallery Preview";
+
+
     lightbox.classList.add("show");
+
 
     document.body.style.overflow = "hidden";
 }
 
+
+/* =========================================
+   CLOSE GALLERY
+========================================= */
+
 function closeGallery() {
-    const lightbox = document.getElementById("galleryLightbox");
+
+    const lightbox =
+        document.getElementById("galleryLightbox");
+
+
+    if (!lightbox) {
+        return;
+    }
+
 
     lightbox.classList.remove("show");
+
 
     document.body.style.overflow = "";
 }
 
-document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-        closeGallery();
+
+/* =========================================
+   VIEW ALL GALLERY
+========================================= */
+
+function showAllGallery() {
+
+    const extraImages =
+        document.querySelectorAll(".gallery-extra");
+
+
+    /*
+     * If future images have been added,
+     * reveal them.
+     */
+
+    if (extraImages.length > 0) {
+
+        extraImages.forEach(function (item) {
+
+            item.style.display = "block";
+
+        });
+
+
+        const mobileButton =
+            document.querySelector(".gallery-mobile-action");
+
+        if (mobileButton) {
+            mobileButton.style.display = "none";
+        }
+
+
+        /*
+         * Scroll slightly to the newly revealed
+         * gallery content.
+         */
+
+        const lastImage =
+            extraImages[0];
+
+        if (lastImage) {
+
+            setTimeout(function () {
+
+                lastImage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }, 100);
+
+        }
+
+        return;
     }
-});
+
+
+    /*
+     * Currently there are no extra images.
+     * This message is only temporary until
+     * more gallery images are added.
+     */
+
+    alert("लवकरच आणखी क्षणचित्रे येथे जोडली जातील. 🙏");
+}
+
+
+/* =========================================
+   ESCAPE KEY
+========================================= */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (event.key === "Escape") {
+
+            closeGallery();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   PREVENT LIGHTBOX IMAGE CLICK
+   FROM CLOSING LIGHTBOX
+========================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const preview =
+            document.getElementById("galleryPreview");
+
+
+        if (preview) {
+
+            preview.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
 
 /* =========================================
    NAVRATRI COUNTDOWN
@@ -80,3 +231,164 @@ function updateNavratriCountdown() {
 updateNavratriCountdown();
 
 setInterval(updateNavratriCountdown, 1000);
+
+/* =========================================
+   SDM MEMBERS
+========================================= */
+
+async function loadMembers() {
+
+    const membersList = document.getElementById("membersList");
+
+    if (!membersList) {
+        console.log("membersList not found");
+        return;
+    }
+
+    try {
+
+        const membersResponse = await fetch("./members.txt");
+
+        if (!membersResponse.ok) {
+            throw new Error("members.txt not found");
+        }
+
+        const membersText = await membersResponse.text();
+
+        const names = membersText
+            .split(/\r?\n/)
+            .map(name => name.trim())
+            .filter(Boolean);
+
+
+        /* Load Marathi mapping */
+
+        let memberMap = {};
+
+        try {
+
+            const mapResponse = await fetch("./members-map.json");
+
+            if (mapResponse.ok) {
+                memberMap = await mapResponse.json();
+            }
+
+        } catch (error) {
+
+            console.warn(
+                "members-map.json not available",
+                error
+            );
+
+        }
+
+
+        /* Clear old members */
+
+        membersList.innerHTML = "";
+
+
+        /* Generate members */
+
+        names.forEach((name, index) => {
+
+            const key = name.toLowerCase().trim();
+
+            const marathiName =
+                memberMap[key] ||
+                memberMap[name] ||
+                name;
+
+
+            const card = document.createElement("div");
+
+            card.className = "member-name";
+
+            card.innerHTML = `
+                <span class="member-number">
+                    ${String(index + 1).padStart(2, "0")}
+                </span>
+
+                <strong>
+                    ${marathiName}
+                </strong>
+            `;
+
+            membersList.appendChild(card);
+
+        });
+
+
+        console.log("Members loaded:", names);
+        console.log("Member mapping:", memberMap);
+
+    } catch (error) {
+
+        console.error(
+            "Members loading failed:",
+            error
+        );
+
+    }
+
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadMembers
+);
+
+/* =========================================
+   GOATCOUNTER TOTAL VISITOR COUNT
+========================================= */
+
+function loadVisitorCount() {
+
+    const visitorCount =
+        document.getElementById("visitorCount");
+
+    if (!visitorCount) return;
+
+    const counterUrl =
+        "https://sdmlakhamapur.goatcounter.com/counter/TOTAL.json";
+
+    fetch(counterUrl)
+
+        .then(response => {
+
+            if (!response.ok) {
+                throw new Error(
+                    "Visitor count request failed: " +
+                    response.status
+                );
+            }
+
+            return response.json();
+
+        })
+
+        .then(data => {
+
+            visitorCount.textContent =
+                data.count || "0";
+
+        })
+
+        .catch(error => {
+
+            console.error(
+                "Visitor count error:",
+                error
+            );
+
+            visitorCount.textContent = "—";
+
+        });
+}
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    loadVisitorCount
+);

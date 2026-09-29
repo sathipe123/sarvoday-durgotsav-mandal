@@ -1,0 +1,75 @@
+/* =========================================
+   SDM GLOBAL SPACE OPTIMIZER
+   Add this at the VERY END of style.css
+========================================= */
+
+:root {
+    --sdm-section-gap: clamp(45px, 6vw, 80px);
+    --sdm-content-gap: clamp(16px, 2.5vw, 28px);
+}
+
+/* Sections */
+.section {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: var(--sdm-section-gap);
+    padding-bottom: var(--sdm-section-gap);
+}
+
+/* Remove accidental empty vertical space */
+.section>.container {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Headings */
+.section-head,
+.committee-title,
+.activities-heading {
+    margin-top: 0;
+}
+
+/* Keep content groups compact */
+.section-head+*,
+.committee-title+*,
+.activities-heading+* {
+    margin-top: var(--sdm-content-gap);
+}
+
+/* Grids use gap instead of random margins */
+.activities-grid,
+.members-list,
+.sdm-gallery {
+    margin-top: 0;
+}
+
+/* Prevent empty-looking space created by last child margins */
+.section>.container>*:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    :root {
+        --sdm-section-gap: 38px;
+        --sdm-content-gap: 18px;
+    }
+
+    .section {
+        padding-top: var(--sdm-section-gap);
+        padding-bottom: var(--sdm-section-gap);
+    }
+
+    .section-head {
+        margin-bottom: var(--sdm-content-gap);
+    }
+
+    .committee-title {
+        margin-bottom: var(--sdm-content-gap);
+    }
+
+    .activities-heading {
+        margin-bottom: var(--sdm-content-gap);
+    }
+}
