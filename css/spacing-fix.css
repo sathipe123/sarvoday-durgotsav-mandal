@@ -300,3 +300,607 @@
         padding: 10px 6px;
     }
 }
+
+/* =========================================
+   SPONSORS / SUPPORTERS
+========================================= */
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 42px;
+}
+
+.sponsor-card {
+    position: relative;
+    overflow: hidden;
+    padding: 26px;
+    border-radius: 22px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, .98), rgba(255, 248, 237, .95));
+    border: 1px solid rgba(200, 146, 46, .28);
+    box-shadow: 0 16px 45px rgba(70, 35, 10, .08);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.sponsor-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+}
+
+.sponsor-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 22px 55px rgba(70, 35, 10, .14);
+}
+
+.sponsor-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sponsor-mark {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--gold);
+    background: rgba(200, 146, 46, .10);
+    border: 1px solid rgba(200, 146, 46, .28);
+    font-size: 19px;
+}
+
+.sponsor-type {
+    padding: 7px 12px;
+    border-radius: 30px;
+    color: var(--red);
+    background: rgba(173, 23, 19, .07);
+    border: 1px solid rgba(173, 23, 19, .14);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .4px;
+}
+
+.sponsor-card-content {
+    margin-top: 25px;
+}
+
+.sponsor-card-content h3 {
+    margin: 0;
+    color: var(--ink);
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.sponsor-card-content h3 span {
+    color: var(--gold);
+    font-size: 18px;
+}
+
+.sponsor-person {
+    min-height: 42px;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.sponsor-support {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(200, 146, 46, .18);
+}
+
+.sponsor-support>span {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(200, 146, 46, .10);
+    font-size: 18px;
+}
+
+.sponsor-support div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.sponsor-support small {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+}
+
+.sponsor-support strong {
+    color: var(--ink);
+    font-size: 13px;
+}
+
+.sponsor-thanks {
+    max-width: 760px;
+    margin: 42px auto 0;
+    padding: 28px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 46, .22);
+}
+
+.sponsor-thanks>span {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.sponsor-thanks p {
+    margin: 0 auto 12px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.sponsor-thanks strong {
+    color: var(--red);
+    font-size: 14px;
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .sponsor-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 30px;
+    }
+
+    .sponsor-card {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .sponsor-card-content h3 {
+        font-size: 21px;
+    }
+
+    .sponsor-thanks {
+        margin-top: 30px;
+        padding: 24px 12px;
+    }
+
+}
+
+/* =========================================
+   SPONSOR BUSINESS THEMES
+========================================= */
+
+.sponsor-card {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* -----------------------------------------
+   KRUSHI KENDRA
+----------------------------------------- */
+
+.sponsor-card.sponsor-krushi {
+    background-color: #fffaf2 !important;
+
+    background-image:
+        linear-gradient(135deg,
+            rgba(255, 250, 242, 0.94) 0%,
+            rgba(255, 250, 242, 0.82) 45%,
+            rgba(255, 250, 242, 0.35) 100%),
+        url("/assets/images/sponsers/krushikendra.png") !important;
+
+    background-size: cover !important;
+    background-position: center right !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* -----------------------------------------
+   SAINI COLLECTIONS
+----------------------------------------- */
+
+.sponsor-card.sponsor-saini {
+    background-color: #fffaf2 !important;
+
+    background-image:
+        linear-gradient(135deg,
+            rgba(255, 250, 242, 0.94) 0%,
+            rgba(255, 250, 242, 0.82) 45%,
+            rgba(255, 250, 242, 0.35) 100%),
+        url("/assets/images/sponsers/collections.png") !important;
+
+    background-size: cover !important;
+    background-position: center right !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* -----------------------------------------
+   RBB CONSTRUCTION + RISHAB PAN PALACE
+----------------------------------------- */
+
+.sponsor-card.sponsor-construction-pan {
+    background-color: #fffaf2 !important;
+
+    background-image:
+        linear-gradient(135deg,
+            rgba(255, 250, 242, 0.94) 0%,
+            rgba(255, 250, 242, 0.80) 45%,
+            rgba(255, 250, 242, 0.35) 100%),
+        url("/assets/images/sponsers/constructions.png") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+/* -----------------------------------------
+   KEEP CARD CONTENT ABOVE IMAGE
+----------------------------------------- */
+
+.sponsor-card>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* -----------------------------------------
+   SOFT OVERLAY
+----------------------------------------- */
+
+.sponsor-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(90deg,
+            rgba(255, 250, 242, 0.10),
+            transparent 75%);
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* -----------------------------------------
+   TEXT ABOVE EVERYTHING
+----------------------------------------- */
+
+.sponsor-card-content h3,
+.sponsor-card-content h3 span,
+.sponsor-card-content .sponsor-person,
+.sponsor-card-content .sponsor-support {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .sponsor-card.sponsor-krushi {
+        background-position: center right !important;
+    }
+
+    .sponsor-card.sponsor-saini {
+        background-position: center right !important;
+    }
+
+    .sponsor-card.sponsor-construction-pan {
+        background-position: center !important;
+    }
+
+}
+
+/* =========================================
+   FINAL SPONSOR THEME TUNING
+========================================= */
+
+.sponsor-card.sponsor-krushi {
+    background-image:
+        linear-gradient(90deg,
+            rgba(255, 250, 242, 0.98) 0%,
+            rgba(255, 250, 242, 0.92) 38%,
+            rgba(255, 250, 242, 0.62) 100%),
+        url("/assets/images/sponsers/krushikendra.png") !important;
+}
+
+.sponsor-card.sponsor-saini {
+    background-image:
+        linear-gradient(90deg,
+            rgba(255, 250, 242, 0.98) 0%,
+            rgba(255, 250, 242, 0.92) 38%,
+            rgba(255, 250, 242, 0.62) 100%),
+        url("/assets/images/sponsers/collections.png") !important;
+}
+
+.sponsor-card.sponsor-construction-pan {
+    background-image:
+        linear-gradient(90deg,
+            rgba(255, 250, 242, 0.98) 0%,
+            rgba(255, 250, 242, 0.90) 38%,
+            rgba(255, 250, 242, 0.62) 100%),
+        url("/assets/images/sponsers/constructions.png") !important;
+}
+
+/* =========================================
+   LAKHMAPURCHI MATARANI PARIVAR
+   SPECIAL HIGHLIGHT
+========================================= */
+
+.members-section {
+    position: relative;
+    margin-top: 58px;
+    padding: 58px 20px 52px;
+    text-align: center;
+    overflow: hidden;
+    border-top: 1px solid rgba(200, 146, 46, .22);
+    border-bottom: 1px solid rgba(200, 146, 46, .16);
+
+    background:
+        radial-gradient(circle at 50% 45%,
+            rgba(237, 199, 106, .12),
+            transparent 55%);
+}
+
+
+/* Decorative golden halo */
+
+.members-section::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(200, 146, 46, .18);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 18px rgba(200, 146, 46, .025),
+        0 0 0 38px rgba(200, 146, 46, .018);
+    animation: familyHalo 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+
+/* Small decorative symbols */
+
+.members-section::after {
+    content: "✦     ॐ     ✦";
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 15px;
+    letter-spacing: 5px;
+    opacity: .75;
+    animation: familySymbols 3s ease-in-out infinite;
+}
+
+
+/* Content */
+
+.members-section .committee-title {
+    position: relative;
+    z-index: 3;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* Small label */
+
+.members-section .committee-title>span {
+    display: inline-block;
+    padding: 7px 16px;
+    margin-bottom: 14px;
+
+    color: var(--gold);
+    background: rgba(200, 146, 46, .08);
+    border: 1px solid rgba(200, 146, 46, .22);
+    border-radius: 50px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    animation: familyBadge 2.8s ease-in-out infinite;
+}
+
+
+/* Main title */
+
+.members-section .committee-title h3 {
+    margin: 0;
+    color: var(--red);
+
+    font-size: clamp(27px, 4vw, 42px);
+    line-height: 1.25;
+    font-weight: 800;
+
+    text-shadow:
+        0 2px 18px rgba(173, 23, 19, .08);
+}
+
+
+/* Golden divider */
+
+.members-section .committee-title h3::after {
+    content: "";
+    display: block;
+
+    width: 90px;
+    height: 3px;
+
+    margin: 15px auto 16px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(90deg,
+            transparent,
+            var(--gold),
+            var(--gold2),
+            var(--gold),
+            transparent);
+
+    animation: familyDivider 3s ease-in-out infinite;
+}
+
+
+/* Tagline */
+
+.members-section .committee-title p {
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes familyHalo {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(.94);
+        opacity: .65;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.04);
+        opacity: 1;
+    }
+}
+
+
+@keyframes familySymbols {
+
+    0%,
+    100% {
+        opacity: .45;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-3px);
+    }
+}
+
+
+@keyframes familyBadge {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 rgba(200, 146, 46, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 22px rgba(200, 146, 46, .14);
+    }
+}
+
+
+@keyframes familyDivider {
+
+    0%,
+    100% {
+        width: 55px;
+        opacity: .55;
+    }
+
+    50% {
+        width: 110px;
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .members-section {
+        margin-top: 42px;
+        padding: 48px 14px 42px;
+    }
+
+    .members-section::before {
+        width: 175px;
+        height: 175px;
+    }
+
+    .members-section::after {
+        top: 15px;
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .members-section .committee-title>span {
+        font-size: 9px;
+        padding: 6px 13px;
+        margin-bottom: 12px;
+    }
+
+    .members-section .committee-title h3 {
+        font-size: 24px;
+        line-height: 1.35;
+    }
+
+    .members-section .committee-title h3::after {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .members-section .committee-title p {
+        font-size: 11px;
+        letter-spacing: .7px;
+    }
+
+}

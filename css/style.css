@@ -3776,541 +3776,57 @@ a.contact-detail-card:hover {
 }
 
 
-/* =========================================
-   RESPONSIVE — MOBILE
-========================================= */
-
 @media (max-width: 550px) {
 
     .committee-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
         margin-bottom: 40px;
     }
 
     .committee-card {
+        width: 100%;
         border-radius: 12px;
-
+        overflow: hidden;
     }
 
-    .committee-photo {
-        height: 100px;
+    .committee-card:nth-child(3) {
+        grid-column: 1 / -1;
+        width: calc(50% - 4px);
+        justify-self: center;
     }
 
-    .committee-info {
-        padding: 10px 4px 12px;
+    .committee-card .member-photo {
+        width: 100%;
+        height: 80%;
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
     }
 
-    .committee-role {
+    .committee-card .member-photo img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .committee-card .member-info {
+        padding: 9px 4px 11px;
+        text-align: center;
+    }
+
+    .committee-card .member-info span {
+        display: block;
         font-size: 9px;
-        margin-bottom: 3px;
-        white-space: nowrap;
+        margin-bottom: 4px;
     }
 
-    .committee-name {
+    .committee-card .member-info h4 {
+        margin: 0;
         font-size: 12px;
         line-height: 1.3;
     }
-
-}
-
-/* =========================================
-   SPONSORS SECTION
-========================================= */
-
-.sponsors {
-    position: relative;
-
-    background:
-        linear-gradient(180deg,
-            #fffaf3 0%,
-            #f8eee2 100%);
-
-    overflow: hidden;
-}
-
-
-/* =========================================
-   DECORATIVE BACKGROUND
-========================================= */
-
-.sponsors::before {
-    content: "";
-
-    position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    top: -220px;
-    right: -160px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(185, 28, 28, .08);
-
-    pointer-events: none;
-}
-
-.sponsors::after {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    bottom: -180px;
-    left: -140px;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(185, 28, 28, .07);
-
-    pointer-events: none;
-}
-
-
-/* =========================================
-   SECTION HEADING
-========================================= */
-
-.sponsors-heading {
-    position: relative;
-
-    z-index: 2;
-
-    margin-bottom: 45px;
-}
-
-.sponsors-heading h2 {
-    margin-top: 8px;
-
-    margin-bottom: 10px;
-}
-
-
-/* =========================================
-   MAIN SPONSOR CARD
-========================================= */
-
-.sponsor-coming {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 900px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 45px;
-
-    padding: 45px;
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(135deg,
-            #ffffff,
-            #fff8ee);
-
-    border: 1px solid rgba(185, 28, 28, .14);
-
-    box-shadow:
-        0 20px 50px rgba(80, 20, 0, .08);
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease;
-}
-
-.sponsor-coming:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 25px 60px rgba(80, 20, 0, .12);
-}
-
-
-/* =========================================
-   SPONSOR ICON
-========================================= */
-
-.sponsor-icon {
-    flex: 0 0 115px;
-
-    width: 115px;
-    height: 115px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 50%;
-
-    color: #f5d58b;
-
-    font-size: 42px;
-
-    background:
-        linear-gradient(145deg,
-            #a91414,
-            #c72a20);
-
-    box-shadow:
-        0 12px 30px rgba(150, 20, 20, .20);
-
-    animation: sponsorPulse 3s ease-in-out infinite;
-}
-
-
-/* =========================================
-   SPONSOR CONTENT
-========================================= */
-
-.sponsor-content {
-    flex: 1;
-}
-
-.sponsor-badge {
-    display: inline-block;
-
-    margin-bottom: 12px;
-
-    padding: 5px 13px;
-
-    border-radius: 999px;
-
-    background: #f8eee2;
-
-    color: #a81717;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: .06em;
-}
-
-
-/* =========================================
-   SPONSOR TITLE
-========================================= */
-
-.sponsor-content h3 {
-    margin: 0 0 12px;
-
-    color: #8f1111;
-
-    font-size: 28px;
-
-    line-height: 1.35;
-}
-
-.sponsor-content h3 em {
-    display: block;
-
-    color: #b51d1d;
-
-    font-style: normal;
-}
-
-
-/* =========================================
-   SPONSOR DESCRIPTION
-========================================= */
-
-.sponsor-content p {
-    max-width: 620px;
-
-    margin: 0 0 18px;
-
-    color: #75645a;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================
-   SPONSOR STATUS
-========================================= */
-
-.sponsor-status {
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-    margin-bottom: 22px;
-
-    color: #9d6816;
-
-    font-size: 13px;
-
-    font-weight: 700;
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-
-    flex: 0 0 8px;
-
-    border-radius: 50%;
-
-    background: #c99532;
-
-    box-shadow:
-        0 0 0 4px rgba(201, 149, 50, .12);
-
-    animation: statusBlink 2s ease-in-out infinite;
-}
-
-
-/* =========================================
-   CONTACT AREA
-========================================= */
-
-.sponsor-contact {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-}
-
-
-/* =========================================
-   CONTACT BUTTON
-========================================= */
-
-.sponsor-btn {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-decoration: none;
-
-    white-space: nowrap;
-}
-
-
-/* =========================================
-   CONTACT DETAILS
-========================================= */
-
-.sponsor-contact-info {
-    display: flex;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 8px 18px;
-
-    margin-top: 14px;
-
-    color: #75645a;
-
-    font-size: 12px;
-}
-
-.sponsor-contact-info strong {
-    color: #8f1111;
-
-    font-size: 13px;
-}
-
-.sponsor-contact-info a {
-    color: #75645a;
-
-    transition: color .2s ease;
-}
-
-.sponsor-contact-info a:hover {
-    color: #a81717;
-}
-
-
-/* =========================================
-   BOTTOM NOTE
-========================================= */
-
-.sponsor-note {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 700px;
-
-    margin: 25px auto 0;
-
-    text-align: center;
-
-    color: #8b766a;
-
-    font-size: 12px;
-}
-
-
-/* =========================================
-   ANIMATIONS
-========================================= */
-
-@keyframes sponsorPulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.04);
-    }
-
-}
-
-@keyframes statusBlink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .45;
-    }
-
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 850px) {
-
-    .sponsor-coming {
-        gap: 30px;
-
-        padding: 35px;
-    }
-
-    .sponsor-icon {
-        flex: 0 0 100px;
-
-        width: 100px;
-        height: 100px;
-
-        font-size: 36px;
-    }
-
-    .sponsor-content h3 {
-        font-size: 25px;
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    .sponsors-heading {
-        margin-bottom: 35px;
-    }
-
-    .sponsor-coming {
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: 25px;
-
-        padding: 32px 22px;
-
-        border-radius: 22px;
-    }
-
-    .sponsor-icon {
-        flex: 0 0 90px;
-
-        width: 90px;
-        height: 90px;
-
-        font-size: 32px;
-    }
-
-    .sponsor-content {
-        width: 100%;
-    }
-
-    .sponsor-content h3 {
-        font-size: 23px;
-
-        line-height: 1.4;
-    }
-
-    .sponsor-content p {
-        font-size: 13px;
-    }
-
-    .sponsor-status {
-        justify-content: center;
-    }
-
-    .sponsor-contact {
-        align-items: center;
-    }
-
-    .sponsor-contact-info {
-        justify-content: center;
-
-        flex-direction: column;
-
-        gap: 5px;
-    }
-
-    .sponsor-note {
-        padding: 0 15px;
-
-        font-size: 11px;
-    }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 400px) {
-
-    .sponsor-coming {
-        padding: 28px 18px;
-    }
-
-    .sponsor-content h3 {
-        font-size: 21px;
-    }
-
-    .sponsor-btn {
-        font-size: 13px;
-
-        padding: 11px 17px;
-    }
-
 }
 
 /* =========================================
@@ -4790,4 +4306,3 @@ a.contact-detail-card:hover {
 
     font-size: 10px;
 }
-
